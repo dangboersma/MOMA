@@ -1,0 +1,132 @@
+version: 2
+
+models:
+  - name: stg_moma__artists
+    description: >
+      Staged MoMA artist (constituent) records ingested from data/raw/Artists.csv.
+      One row per constituent_id after light cleaning and deduplication.
+    columns:
+      - name: artist_sk
+        description: Deterministic surrogate key hashed from constituent_id.
+        data_tests:
+          - unique
+          - not_null
+      - name: constituent_id
+        description: Unique identifier for the artist in MoMA's collection system.
+        data_tests:
+          - unique
+          - not_null
+      - name: display_name
+        description: Public display name of the artist.
+      - name: artist_bio
+        description: Short biography or background information about the artist.
+      - name: nationality
+        description: Country or region of origin of the artist.
+      - name: gender
+        description: Lowercased gender value from the source file.
+      - name: begin_date
+        description: Artist birth year. Source zeros are converted to null.
+      - name: end_date
+        description: Artist death year. Source zeros are converted to null.
+      - name: wiki_qid
+        description: Wikidata QID for the artist, when present.
+      - name: ulan_id
+        description: Getty Union List of Artist Names identifier, when present.
+
+  - name: stg_moma__artworks
+    description: >
+      Staged MoMA artwork records ingested from data/raw/Artworks.csv.
+      One row per object_id. Multi-artist constituent_ids are left as a
+      comma-separated list for later explosion in intermediate models.
+    columns:
+      - name: artwork_sk
+        description: Deterministic surrogate key hashed from object_id.
+        data_tests:
+          - unique
+          - not_null
+      - name: object_id
+        description: Unique identifier for the artwork in the MoMA database.
+        data_tests:
+          - unique
+          - not_null
+      - name: title
+        description: Name or title of the artwork.
+      - name: artist_name
+        description: Display name(s) of the artist(s) who created the artwork.
+      - name: constituent_ids
+        description: >
+          Raw constituent identifier(s) related to the artwork. Multiple
+          artists are separated by commas.
+      - name: artist_bio
+        description: Artist biography text copied onto the artwork record.
+      - name: nationality
+        description: Artist nationality text copied onto the artwork record.
+      - name: artist_begin_date
+        description: Artist birth-year text copied onto the artwork record.
+      - name: artist_end_date
+        description: Artist death-year text copied onto the artwork record.
+      - name: gender
+        description: Artist gender text copied onto the artwork record.
+      - name: artwork_date
+        description: Date or year the artwork was created, as free text.
+      - name: medium
+        description: Material(s) used to create the artwork.
+      - name: dimensions
+        description: Physical dimensions as originally recorded.
+      - name: credit_line
+        description: Credit or donation source of the artwork.
+      - name: accession_number
+        description: Unique accession number assigned in the museum collection system.
+      - name: classification
+        description: Artwork classification such as painting, sculpture, or photography.
+      - name: department
+        description: Museum department that holds or categorizes the artwork.
+      - name: date_acquired
+        description: Date the artwork was acquired by the museum.
+      - name: is_cataloged
+        description: Whether the artwork is cataloged (true for Y, false for N).
+      - name: url
+        description: MoMA collection page URL for the artwork.
+      - name: image_url
+        description: Image URL hosted by the museum.
+      - name: on_view
+        description: Gallery location when the artwork is on display; null otherwise.
+      - name: circumference_cm
+        description: Circumference in centimeters, when applicable.
+      - name: depth_cm
+        description: Depth in centimeters, when applicable.
+      - name: diameter_cm
+        description: Diameter in centimeters, when applicable.
+      - name: height_cm
+        description: Height in centimeters, when applicable.
+      - name: length_cm
+        description: Length in centimeters, when applicable.
+      - name: weight_kg
+        description: Weight in kilograms, when applicable.
+      - name: width_cm
+        description: Width in centimeters, when applicable.
+      - name: seat_height_cm
+        description: Seat height in centimeters, when applicable.
+      - name: duration_sec
+        description: Duration in seconds for time-based works, when applicable.
+
+  - name: stg_moma__data_dictionary
+    description: >
+      Staged MoMA source-field documentation ingested from
+      data/raw/MoMA_data_dictionary.csv. One row per source table and field.
+    columns:
+      - name: data_dictionary_sk
+        description: Deterministic surrogate key hashed from source_table and source_field.
+        data_tests:
+          - unique
+          - not_null
+      - name: source_table
+        description: Raw source entity documented by the dictionary (Artists or Artworks).
+        data_tests:
+          - not_null
+      - name: source_field
+        description: Raw source column name documented by the dictionary.
+        data_tests:
+          - not_null
+      - name: field_description
+        description: Business description of the source field.

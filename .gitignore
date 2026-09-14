@@ -1,0 +1,7 @@
+.venv/
+target/
+dbt_packages/
+data/processed/*.duckdb
+*.pyc
+__pycache__/
+.env
