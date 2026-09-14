@@ -1,0 +1,2373 @@
+[0m20:49:25.750636 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3C4A5A270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3C268CCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3C7373C50>]}
+
+
+============================== 20:49:25.760750 | b448aa50-34c5-495d-88fc-bfabcca830b8 ==============================
+[0m20:49:25.760750 [info ] [MainThread]: Running with dbt=1.12.4
+[0m20:49:25.761591 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\MOMA\\logs'}
+[0m20:49:25.796851 [info ] [MainThread]: dbt version: 1.12.4
+[0m20:49:25.797322 [info ] [MainThread]: python version: 3.14.3
+[0m20:49:25.797858 [info ] [MainThread]: python path: C:\MOMA\.venv\Scripts\python.exe
+[0m20:49:25.798302 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m20:49:26.148244 [info ] [MainThread]: Using profiles dir at .
+[0m20:49:26.148829 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m20:49:26.149157 [info ] [MainThread]: Using dbt_project.yml file at C:\MOMA\dbt_project.yml
+[0m20:49:26.174765 [info ] [MainThread]: adapter type: duckdb
+[0m20:49:26.175418 [info ] [MainThread]: adapter version: 1.11.0
+[0m20:49:26.273913 [info ] [MainThread]: Configuration:
+[0m20:49:26.274268 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:49:26.274606 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m20:49:26.275129 [info ] [MainThread]: Required dependencies:
+[0m20:49:26.275438 [debug] [MainThread]: Executing "git --help"
+[0m20:49:26.521869 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:49:26.522722 [debug] [MainThread]: STDERR: "b''"
+[0m20:49:26.524298 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:49:26.525471 [info ] [MainThread]: Connection:
+[0m20:49:26.526839 [info ] [MainThread]:   database: analytics
+[0m20:49:26.527184 [info ] [MainThread]:   schema: main
+[0m20:49:26.527506 [info ] [MainThread]:   path: data/processed/analytics.duckdb
+[0m20:49:26.527801 [info ] [MainThread]:   config_options: None
+[0m20:49:26.528096 [info ] [MainThread]:   extensions: None
+[0m20:49:26.528383 [info ] [MainThread]:   settings: {}
+[0m20:49:26.528658 [info ] [MainThread]:   external_root: .
+[0m20:49:26.528936 [info ] [MainThread]:   use_credential_provider: None
+[0m20:49:26.529225 [info ] [MainThread]:   attach: None
+[0m20:49:26.529571 [info ] [MainThread]:   filesystems: None
+[0m20:49:26.530171 [info ] [MainThread]:   remote: None
+[0m20:49:26.530569 [info ] [MainThread]:   plugins: None
+[0m20:49:26.530972 [info ] [MainThread]:   disable_transactions: False
+[0m20:49:26.531990 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m20:49:26.762495 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m20:49:32.745368 [debug] [MainThread]: Using duckdb connection "debug"
+[0m20:49:32.746809 [debug] [MainThread]: On debug: select 1 as id
+[0m20:49:32.747624 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:49:32.787212 [debug] [MainThread]: SQL status: OK in 0.040 seconds
+[0m20:49:32.788004 [debug] [MainThread]: On debug: Close
+[0m20:49:32.788812 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m20:49:32.789126 [info ] [MainThread]: [32mAll checks passed![0m
+[0m20:49:32.789768 [debug] [MainThread]: Command `dbt debug` succeeded at 20:49:32.789663 after 7.35 seconds
+[0m20:49:32.790027 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m20:49:32.790261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3C751E190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3C76ABD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3C740A9C0>]}
+[0m20:49:32.790539 [debug] [MainThread]: Flushing usage events
+[0m20:49:33.535574 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:50:16.702440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621BB3A270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026219760B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621E43FC50>]}
+
+
+============================== 20:50:16.710503 | cbc6f8c5-8e18-45b3-88a6-723ff569b4d6 ==============================
+[0m20:50:16.710503 [info ] [MainThread]: Running with dbt=1.12.4
+[0m20:50:16.712586 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt debug --profiles-dir .', 'log_path': 'C:\\MOMA\\logs'}
+[0m20:50:16.739038 [info ] [MainThread]: dbt version: 1.12.4
+[0m20:50:16.739479 [info ] [MainThread]: python version: 3.14.3
+[0m20:50:16.739753 [info ] [MainThread]: python path: C:\MOMA\.venv\Scripts\python.exe
+[0m20:50:16.740190 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m20:50:16.845614 [info ] [MainThread]: Using profiles dir at .
+[0m20:50:16.846118 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m20:50:16.846696 [info ] [MainThread]: Using dbt_project.yml file at C:\MOMA\dbt_project.yml
+[0m20:50:16.848701 [info ] [MainThread]: adapter type: duckdb
+[0m20:50:16.849005 [info ] [MainThread]: adapter version: 1.11.0
+[0m20:50:17.044477 [info ] [MainThread]: Configuration:
+[0m20:50:17.045264 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:50:17.045552 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m20:50:17.045814 [info ] [MainThread]: Required dependencies:
+[0m20:50:17.046059 [debug] [MainThread]: Executing "git --help"
+[0m20:50:17.198123 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:50:17.199014 [debug] [MainThread]: STDERR: "b''"
+[0m20:50:17.199679 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:50:17.200182 [info ] [MainThread]: Connection:
+[0m20:50:17.200631 [info ] [MainThread]:   database: analytics
+[0m20:50:17.201126 [info ] [MainThread]:   schema: main
+[0m20:50:17.201535 [info ] [MainThread]:   path: data/processed/analytics.duckdb
+[0m20:50:17.201942 [info ] [MainThread]:   config_options: None
+[0m20:50:17.202293 [info ] [MainThread]:   extensions: None
+[0m20:50:17.202660 [info ] [MainThread]:   settings: {}
+[0m20:50:17.202991 [info ] [MainThread]:   external_root: .
+[0m20:50:17.203305 [info ] [MainThread]:   use_credential_provider: None
+[0m20:50:17.203619 [info ] [MainThread]:   attach: None
+[0m20:50:17.203911 [info ] [MainThread]:   filesystems: None
+[0m20:50:17.204198 [info ] [MainThread]:   remote: None
+[0m20:50:17.204476 [info ] [MainThread]:   plugins: None
+[0m20:50:17.204735 [info ] [MainThread]:   disable_transactions: False
+[0m20:50:17.205255 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m20:50:17.358472 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m20:50:17.476653 [debug] [MainThread]: Using duckdb connection "debug"
+[0m20:50:17.477212 [debug] [MainThread]: On debug: select 1 as id
+[0m20:50:17.477588 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:50:17.556186 [debug] [MainThread]: SQL status: OK in 0.078 seconds
+[0m20:50:17.559037 [debug] [MainThread]: On debug: Close
+[0m20:50:17.560426 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m20:50:17.561549 [info ] [MainThread]: [32mAll checks passed![0m
+[0m20:50:17.563822 [debug] [MainThread]: Command `dbt debug` succeeded at 20:50:17.563448 after 1.16 seconds
+[0m20:50:17.564791 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m20:50:17.565576 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621E5CDBA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621E753BF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002621E4B29C0>]}
+[0m20:50:17.567440 [debug] [MainThread]: Flushing usage events
+[0m20:50:18.031217 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:02:52.306847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68B83A270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A689470B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68E197C50>]}
+
+
+============================== 21:02:52.315004 | 7137b26e-be8f-403e-a1bf-90807739119d ==============================
+[0m21:02:52.315004 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:02:52.316484 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt run --select staging --profiles-dir .', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\MOMA\\logs'}
+[0m21:02:52.593990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68E29CE90>]}
+[0m21:02:52.640979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68E4AA360>]}
+[0m21:02:52.644456 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:02:52.895478 [debug] [MainThread]: checksum: 5c67227a763f404f3ccc21af65ef601c75dcb0fe022e77464793574c2eff3edf, vars: {}, profile: duckdb_profile, target: dev, version: 1.12.4
+[0m21:02:52.896855 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m21:02:52.897351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68E273A50>]}
+[0m21:02:56.492659 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.analytics_project.marts
+- models.analytics_project.intermediate
+[0m21:02:56.502336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A690186030>]}
+[0m21:02:56.617552 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:02:57.035881 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:02:57.084420 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:02:57.159028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A690650BB0>]}
+[0m21:02:57.159682 [info ] [MainThread]: Found 3 models, 12 data tests, 500 macros
+[0m21:02:57.160121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A6906EF110>]}
+[0m21:02:57.162310 [info ] [MainThread]: 
+[0m21:02:57.162834 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:02:57.163044 [info ] [MainThread]: 
+[0m21:02:57.163410 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:02:57.167500 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m21:02:57.252985 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m21:02:57.253705 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m21:02:57.254149 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:02:57.272731 [debug] [ThreadPool]: SQL status: OK in 0.019 seconds
+[0m21:02:57.273719 [debug] [ThreadPool]: On list_analytics: Close
+[0m21:02:57.274230 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main)
+[0m21:02:57.274554 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main"
+"
+[0m21:02:57.279095 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:02:57.279372 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type != 'duckdb'
+    
+  
+[0m21:02:57.279557 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:02:57.280623 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:02:57.281389 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:02:57.281636 [debug] [ThreadPool]: On create_analytics_main: BEGIN
+[0m21:02:57.281939 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:02:57.282112 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:02:57.282273 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_analytics_main"} */
+
+    
+    
+        create schema if not exists "analytics"."main"
+    
+[0m21:02:57.283734 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:02:57.285769 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m21:02:57.286573 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:02:57.287205 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m21:02:57.288286 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:02:57.288872 [debug] [ThreadPool]: On create_analytics_main: Close
+[0m21:02:57.291074 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics_main'
+[0m21:02:57.294209 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:02:57.294448 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m21:02:57.294634 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:02:57.295337 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:02:57.296139 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:02:57.296791 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m21:02:57.302567 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m21:02:57.303455 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m21:02:57.303847 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m21:02:57.304595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A6905F71D0>]}
+[0m21:02:57.304933 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:02:57.305173 [debug] [MainThread]: On master: BEGIN
+[0m21:02:57.305335 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:02:57.305699 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:02:57.305893 [debug] [MainThread]: On master: COMMIT
+[0m21:02:57.306043 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:02:57.306183 [debug] [MainThread]: On master: COMMIT
+[0m21:02:57.306429 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:02:57.306604 [debug] [MainThread]: On master: Close
+[0m21:02:57.334335 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_moma__artworks
+[0m21:02:57.335459 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_moma__data_dictionary
+[0m21:02:57.336553 [info ] [Thread-3 (]: 3 of 3 START sql view model main.stg_moma__data_dictionary ..................... [RUN]
+[0m21:02:57.337324 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.analytics_project.stg_moma__data_dictionary'
+[0m21:02:57.337742 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_moma__data_dictionary
+[0m21:02:57.336039 [debug] [Thread-1 (]: Began running node model.analytics_project.stg_moma__artists
+[0m21:02:57.335039 [info ] [Thread-2 (]: 2 of 3 START sql view model main.stg_moma__artworks ............................ [RUN]
+[0m21:02:57.342559 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.analytics_project.stg_moma__artworks'
+[0m21:02:57.342773 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_moma__artworks
+[0m21:02:57.343439 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_moma__artworks"
+[0m21:02:57.342158 [info ] [Thread-1 (]: 1 of 3 START sql view model main.stg_moma__artists ............................. [RUN]
+[0m21:02:57.344044 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.analytics_project.stg_moma__artists'
+[0m21:02:57.344278 [debug] [Thread-1 (]: Began compiling node model.analytics_project.stg_moma__artists
+[0m21:02:57.345036 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_project.stg_moma__artists"
+[0m21:02:57.341810 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_moma__data_dictionary"
+[0m21:02:57.346543 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_moma__artworks
+[0m21:02:57.369091 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_moma__artworks"
+[0m21:02:57.370755 [debug] [Thread-1 (]: Began executing node model.analytics_project.stg_moma__artists
+[0m21:02:57.372915 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_project.stg_moma__artists"
+[0m21:02:57.369812 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_moma__data_dictionary
+[0m21:02:57.374843 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_moma__data_dictionary"
+[0m21:02:57.376487 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:02:57.376787 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: BEGIN
+[0m21:02:57.377027 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:02:57.377737 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:02:57.377975 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:02:57.378519 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artists"} */
+
+  
+  create view "analytics"."main"."stg_moma__artists__dbt_tmp" as (
+    with source as (
+
+    select *
+    from read_csv_auto('data/raw/Artists.csv', header = true, sample_size = -1)
+
+),
+
+renamed as (
+
+    select
+        try_cast("ConstituentID" as integer) as constituent_id,
+        try_cast("DisplayName" as varchar) as display_name,
+        try_cast("ArtistBio" as varchar) as artist_bio,
+        try_cast("Nationality" as varchar) as nationality,
+        try_cast("Gender" as varchar) as gender,
+        try_cast("BeginDate" as integer) as begin_date,
+        try_cast("EndDate" as integer) as end_date,
+        try_cast("Wiki QID" as varchar) as wiki_qid,
+        try_cast("ULAN" as bigint) as ulan_id
+    from source
+
+),
+
+cleaned as (
+
+    select
+        constituent_id,
+        nullif(trim(display_name), '') as display_name,
+        nullif(trim(artist_bio), '') as artist_bio,
+        nullif(trim(nationality), '') as nationality,
+        nullif(lower(trim(gender)), '') as gender,
+        nullif(begin_date, 0) as begin_date,
+        nullif(end_date, 0) as end_date,
+        nullif(trim(wiki_qid), '') as wiki_qid,
+        ulan_id
+    from renamed
+    where constituent_id is not null
+
+),
+
+deduplicated as (
+
+    select *
+    from cleaned
+    qualify row_number() over (
+        partition by constituent_id
+        order by display_name
+    ) = 1
+
+),
+
+final as (
+
+    select
+        md5(cast(constituent_id as varchar)) as artist_sk,
+        constituent_id,
+        display_name,
+        artist_bio,
+        nationality,
+        gender,
+        begin_date,
+        end_date,
+        wiki_qid,
+        ulan_id
+    from deduplicated
+
+)
+
+select * from final
+  );
+
+[0m21:02:57.378233 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:02:57.379719 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: BEGIN
+[0m21:02:57.379918 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:02:57.379469 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:02:57.380280 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: BEGIN
+[0m21:02:57.380519 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:02:57.380895 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m21:02:57.381116 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:02:57.381346 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__data_dictionary"} */
+
+  
+  create view "analytics"."main"."stg_moma__data_dictionary__dbt_tmp" as (
+    with source as (
+
+    select *
+    from read_csv_auto('data/raw/MoMA_data_dictionary.csv', header = true, sample_size = -1)
+
+),
+
+renamed as (
+
+    select
+        try_cast("Table" as varchar) as source_table,
+        try_cast("Field" as varchar) as source_field,
+        try_cast("Description" as varchar) as field_description
+    from source
+
+),
+
+cleaned as (
+
+    select
+        nullif(trim(source_table), '') as source_table,
+        nullif(trim(source_field), '') as source_field,
+        nullif(trim(field_description), '') as field_description
+    from renamed
+    where source_table is not null
+      and source_field is not null
+
+),
+
+deduplicated as (
+
+    select *
+    from cleaned
+    qualify row_number() over (
+        partition by source_table, source_field
+        order by field_description
+    ) = 1
+
+),
+
+final as (
+
+    select
+        md5(source_table || '|' || source_field) as data_dictionary_sk,
+        source_table,
+        source_field,
+        field_description
+    from deduplicated
+
+)
+
+select * from final
+  );
+
+[0m21:02:57.382143 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m21:02:57.382372 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:02:57.382652 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artworks"} */
+
+  
+  create view "analytics"."main"."stg_moma__artworks__dbt_tmp" as (
+    with source as (
+
+    select *
+    from read_csv_auto('data/raw/Artworks.csv', header = true, sample_size = -1)
+
+),
+
+renamed as (
+
+    select
+        try_cast("ObjectID" as integer) as object_id,
+        try_cast("Title" as varchar) as title,
+        try_cast("Artist" as varchar) as artist_name,
+        try_cast("ConstituentID" as varchar) as constituent_ids,
+        try_cast("ArtistBio" as varchar) as artist_bio,
+        try_cast("Nationality" as varchar) as nationality,
+        try_cast("BeginDate" as varchar) as artist_begin_date,
+        try_cast("EndDate" as varchar) as artist_end_date,
+        try_cast("Gender" as varchar) as gender,
+        try_cast("Date" as varchar) as artwork_date,
+        try_cast("Medium" as varchar) as medium,
+        try_cast("Dimensions" as varchar) as dimensions,
+        try_cast("CreditLine" as varchar) as credit_line,
+        try_cast("AccessionNumber" as varchar) as accession_number,
+        try_cast("Classification" as varchar) as classification,
+        try_cast("Department" as varchar) as department,
+        try_cast("DateAcquired" as date) as date_acquired,
+        try_cast("Cataloged" as varchar) as cataloged,
+        try_cast("URL" as varchar) as url,
+        try_cast("ImageURL" as varchar) as image_url,
+        try_cast("OnView" as varchar) as on_view,
+        try_cast("Circumference (cm)" as double) as circumference_cm,
+        try_cast("Depth (cm)" as double) as depth_cm,
+        try_cast("Diameter (cm)" as double) as diameter_cm,
+        try_cast("Height (cm)" as double) as height_cm,
+        try_cast("Length (cm)" as double) as length_cm,
+        try_cast("Weight (kg)" as double) as weight_kg,
+        try_cast("Width (cm)" as double) as width_cm,
+        try_cast("Seat Height (cm)" as double) as seat_height_cm,
+        try_cast("Duration (sec.)" as double) as duration_sec
+    from source
+
+),
+
+cleaned as (
+
+    select
+        object_id,
+        nullif(trim(title), '') as title,
+        nullif(trim(artist_name), '') as artist_name,
+        nullif(trim(constituent_ids), '') as constituent_ids,
+        nullif(trim(replace(replace(artist_bio, '(', ''), ')', '')), '') as artist_bio,
+        nullif(trim(replace(replace(nationality, '(', ''), ')', '')), '') as nationality,
+        nullif(trim(replace(replace(artist_begin_date, '(', ''), ')', '')), '') as artist_begin_date,
+        nullif(trim(replace(replace(artist_end_date, '(', ''), ')', '')), '') as artist_end_date,
+        nullif(lower(trim(replace(replace(gender, '(', ''), ')', ''))), '') as gender,
+        nullif(trim(artwork_date), '') as artwork_date,
+        nullif(trim(medium), '') as medium,
+        nullif(trim(dimensions), '') as dimensions,
+        nullif(trim(credit_line), '') as credit_line,
+        nullif(trim(accession_number), '') as accession_number,
+        nullif(trim(classification), '') as classification,
+        nullif(trim(department), '') as department,
+        date_acquired,
+        try_cast(
+            case
+                when upper(trim(cataloged)) = 'Y' then 'true'
+                when upper(trim(cataloged)) = 'N' then 'false'
+            end as boolean
+        ) as is_cataloged,
+        nullif(trim(url), '') as url,
+        nullif(trim(image_url), '') as image_url,
+        nullif(trim(on_view), '') as on_view,
+        circumference_cm,
+        depth_cm,
+        diameter_cm,
+        height_cm,
+        length_cm,
+        weight_kg,
+        width_cm,
+        seat_height_cm,
+        duration_sec
+    from renamed
+    where object_id is not null
+
+),
+
+deduplicated as (
+
+    select *
+    from cleaned
+    qualify row_number() over (
+        partition by object_id
+        order by accession_number
+    ) = 1
+
+),
+
+final as (
+
+    select
+        md5(cast(object_id as varchar)) as artwork_sk,
+        object_id,
+        title,
+        artist_name,
+        constituent_ids,
+        artist_bio,
+        nationality,
+        artist_begin_date,
+        artist_end_date,
+        gender,
+        artwork_date,
+        medium,
+        dimensions,
+        credit_line,
+        accession_number,
+        classification,
+        department,
+        date_acquired,
+        is_cataloged,
+        url,
+        image_url,
+        on_view,
+        circumference_cm,
+        depth_cm,
+        diameter_cm,
+        height_cm,
+        length_cm,
+        weight_kg,
+        width_cm,
+        seat_height_cm,
+        duration_sec
+    from deduplicated
+
+)
+
+select * from final
+  );
+
+[0m21:02:57.409920 [debug] [Thread-1 (]: SQL status: OK in 0.031 seconds
+[0m21:02:57.415805 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:02:57.410329 [debug] [Thread-3 (]: SQL status: OK in 0.029 seconds
+[0m21:02:57.417968 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:02:57.418241 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__data_dictionary"} */
+alter view "analytics"."main"."stg_moma__data_dictionary__dbt_tmp" rename to "stg_moma__data_dictionary"
+[0m21:02:57.416222 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artists"} */
+alter view "analytics"."main"."stg_moma__artists__dbt_tmp" rename to "stg_moma__artists"
+[0m21:02:57.418909 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m21:02:57.426619 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: COMMIT
+[0m21:02:57.427194 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:02:57.427410 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: COMMIT
+[0m21:02:57.426936 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m21:02:57.428495 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: COMMIT
+[0m21:02:57.428736 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:02:57.428932 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: COMMIT
+[0m21:02:57.430619 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m21:02:57.433849 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:02:57.434435 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__data_dictionary"} */
+
+      drop view if exists "analytics"."main"."stg_moma__data_dictionary__dbt_backup" cascade
+    
+[0m21:02:57.434160 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m21:02:57.435941 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:02:57.434948 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m21:02:57.437720 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: Close
+[0m21:02:57.436172 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artists"} */
+
+      drop view if exists "analytics"."main"."stg_moma__artists__dbt_backup" cascade
+    
+[0m21:02:57.439242 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:02:57.440069 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: Close
+[0m21:02:57.440678 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A690B67AC0>]}
+[0m21:02:57.441131 [info ] [Thread-3 (]: 3 of 3 OK created sql view model main.stg_moma__data_dictionary ................ [[32mOK[0m in 0.10s]
+[0m21:02:57.441563 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_moma__data_dictionary
+[0m21:02:57.441868 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A690B2B610>]}
+[0m21:02:57.442234 [info ] [Thread-1 (]: 1 of 3 OK created sql view model main.stg_moma__artists ........................ [[32mOK[0m in 0.10s]
+[0m21:02:57.442568 [debug] [Thread-1 (]: Finished running node model.analytics_project.stg_moma__artists
+[0m21:02:57.685593 [debug] [Thread-2 (]: SQL status: OK in 0.302 seconds
+[0m21:02:57.687986 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:02:57.688326 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artworks"} */
+alter view "analytics"."main"."stg_moma__artworks__dbt_tmp" rename to "stg_moma__artworks"
+[0m21:02:57.689080 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:02:57.690144 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: COMMIT
+[0m21:02:57.690500 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:02:57.690768 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: COMMIT
+[0m21:02:57.722968 [debug] [Thread-2 (]: SQL status: OK in 0.032 seconds
+[0m21:02:57.725470 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:02:57.726006 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artworks"} */
+
+      drop view if exists "analytics"."main"."stg_moma__artworks__dbt_backup" cascade
+    
+[0m21:02:57.726873 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:02:57.728508 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: Close
+[0m21:02:57.729250 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7137b26e-be8f-403e-a1bf-90807739119d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A690B703D0>]}
+[0m21:02:57.729994 [info ] [Thread-2 (]: 2 of 3 OK created sql view model main.stg_moma__artworks ....................... [[32mOK[0m in 0.39s]
+[0m21:02:57.730655 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_moma__artworks
+[0m21:02:57.732370 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:02:57.733277 [debug] [MainThread]: On master: BEGIN
+[0m21:02:57.733747 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:02:57.734405 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:02:57.734725 [debug] [MainThread]: On master: COMMIT
+[0m21:02:57.734987 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:02:57.735232 [debug] [MainThread]: On master: COMMIT
+[0m21:02:57.735665 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:02:57.735982 [debug] [MainThread]: On master: Close
+[0m21:02:57.736343 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:02:57.736569 [debug] [MainThread]: Connection 'create_analytics_main' was properly closed.
+[0m21:02:57.736766 [debug] [MainThread]: Connection 'list_analytics_main' was properly closed.
+[0m21:02:57.736951 [debug] [MainThread]: Connection 'model.analytics_project.stg_moma__data_dictionary' was properly closed.
+[0m21:02:57.737140 [debug] [MainThread]: Connection 'model.analytics_project.stg_moma__artworks' was properly closed.
+[0m21:02:57.737320 [debug] [MainThread]: Connection 'model.analytics_project.stg_moma__artists' was properly closed.
+[0m21:02:57.737605 [info ] [MainThread]: 
+[0m21:02:57.737891 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 0.57 seconds (0.57s).
+[0m21:02:57.738976 [debug] [MainThread]: Command end result
+[0m21:02:57.769848 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:02:57.772546 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:02:57.775983 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:02:57.783687 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\MOMA\target\run_results.json
+[0m21:02:57.783991 [info ] [MainThread]: 
+[0m21:02:57.784225 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:02:57.784392 [info ] [MainThread]: 
+[0m21:02:57.784577 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m21:02:57.785368 [debug] [MainThread]: Command `dbt run` succeeded at 21:02:57.785284 after 5.70 seconds
+[0m21:02:57.785694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68E1B39A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68DF6DE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A68E133AD0>]}
+[0m21:02:57.786001 [debug] [MainThread]: Flushing usage events
+[0m21:02:58.591012 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:03:16.720392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027AFDCDA270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027AFB910CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A80657C50>]}
+
+
+============================== 21:03:16.726341 | 0770a0ee-7094-4ddc-a71a-617b3076e563 ==============================
+[0m21:03:16.726341 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:03:16.726944 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt test --select staging --profiles-dir .', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'C:\\MOMA\\logs'}
+[0m21:03:16.911106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0770a0ee-7094-4ddc-a71a-617b3076e563', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A8075CE90>]}
+[0m21:03:16.954290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0770a0ee-7094-4ddc-a71a-617b3076e563', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A80916360>]}
+[0m21:03:16.957056 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:03:17.092632 [debug] [MainThread]: checksum: 5c67227a763f404f3ccc21af65ef601c75dcb0fe022e77464793574c2eff3edf, vars: {}, profile: duckdb_profile, target: dev, version: 1.12.4
+[0m21:03:17.263856 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:03:17.264193 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:03:17.264373 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:03:17.269850 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.analytics_project.intermediate
+- models.analytics_project.marts
+[0m21:03:17.273950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0770a0ee-7094-4ddc-a71a-617b3076e563', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A80CC0150>]}
+[0m21:03:17.366207 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:03:17.369085 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:03:17.390908 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:03:17.453980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0770a0ee-7094-4ddc-a71a-617b3076e563', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A80C33890>]}
+[0m21:03:17.454417 [info ] [MainThread]: Found 3 models, 12 data tests, 500 macros
+[0m21:03:17.454681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0770a0ee-7094-4ddc-a71a-617b3076e563', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A80EEFE70>]}
+[0m21:03:17.460566 [info ] [MainThread]: 
+[0m21:03:17.461639 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:03:17.462436 [info ] [MainThread]: 
+[0m21:03:17.463780 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:03:17.471674 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics_main'
+[0m21:03:17.523916 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:03:17.524235 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m21:03:17.524415 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:03:17.550185 [debug] [ThreadPool]: SQL status: OK in 0.026 seconds
+[0m21:03:17.550566 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:03:17.550765 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m21:03:17.567682 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m21:03:17.575131 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m21:03:17.575837 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m21:03:17.577492 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0770a0ee-7094-4ddc-a71a-617b3076e563', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A811C4A10>]}
+[0m21:03:17.577964 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:03:17.578228 [debug] [MainThread]: On master: BEGIN
+[0m21:03:17.578469 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:03:17.578970 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:03:17.579280 [debug] [MainThread]: On master: COMMIT
+[0m21:03:17.579500 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:03:17.579704 [debug] [MainThread]: On master: COMMIT
+[0m21:03:17.580134 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:03:17.580375 [debug] [MainThread]: On master: Close
+[0m21:03:17.585057 [debug] [Thread-1 (]: Began running node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:03:17.585620 [debug] [Thread-3 (]: Began running node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:03:17.586029 [debug] [Thread-4 (]: Began running node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:03:17.586441 [debug] [Thread-2 (]: Began running node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:03:17.588171 [info ] [Thread-2 (]: 2 of 12 START test not_null_stg_moma__artists_constituent_id ................... [RUN]
+[0m21:03:17.588725 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933'
+[0m21:03:17.587717 [info ] [Thread-4 (]: 4 of 12 START test not_null_stg_moma__artworks_object_id ....................... [RUN]
+[0m21:03:17.590087 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95'
+[0m21:03:17.586818 [info ] [Thread-1 (]: 1 of 12 START test not_null_stg_moma__artists_artist_sk ........................ [RUN]
+[0m21:03:17.587249 [info ] [Thread-3 (]: 3 of 12 START test not_null_stg_moma__artworks_artwork_sk ...................... [RUN]
+[0m21:03:17.589420 [debug] [Thread-2 (]: Began compiling node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:03:17.590461 [debug] [Thread-4 (]: Began compiling node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:03:17.590978 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671'
+[0m21:03:17.591434 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b'
+[0m21:03:17.607220 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:03:17.611903 [debug] [Thread-4 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:03:17.612307 [debug] [Thread-1 (]: Began compiling node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:03:17.616823 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:03:17.612685 [debug] [Thread-3 (]: Began compiling node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:03:17.620706 [debug] [Thread-3 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:03:17.621648 [debug] [Thread-3 (]: Began executing node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:03:17.632216 [debug] [Thread-3 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:03:17.633219 [debug] [Thread-1 (]: Began executing node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:03:17.634583 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:03:17.634996 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:03:17.635264 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: BEGIN
+[0m21:03:17.635651 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:03:17.636351 [debug] [Thread-4 (]: Began executing node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:03:17.637592 [debug] [Thread-4 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:03:17.638871 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m21:03:17.639156 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:03:17.639395 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artwork_sk
+from "analytics"."main"."stg_moma__artworks"
+where artwork_sk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.643353 [debug] [Thread-2 (]: Began executing node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:03:17.651347 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:03:17.654288 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:03:17.654609 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: BEGIN
+[0m21:03:17.654850 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:03:17.655491 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:03:17.655749 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:03:17.655948 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist_sk
+from "analytics"."main"."stg_moma__artists"
+where artist_sk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.656617 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:03:17.656860 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: BEGIN
+[0m21:03:17.657052 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:03:17.657492 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:03:17.657697 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:03:17.657885 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select constituent_id
+from "analytics"."main"."stg_moma__artists"
+where constituent_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.660929 [debug] [Thread-4 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:03:17.661928 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: BEGIN
+[0m21:03:17.662781 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:03:17.664197 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m21:03:17.665058 [debug] [Thread-4 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:03:17.667610 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select object_id
+from "analytics"."main"."stg_moma__artworks"
+where object_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.713920 [debug] [Thread-2 (]: SQL status: OK in 0.055 seconds
+[0m21:03:17.719485 [debug] [Thread-1 (]: SQL status: OK in 0.063 seconds
+[0m21:03:17.723469 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: ROLLBACK
+[0m21:03:17.724334 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: Close
+[0m21:03:17.726574 [info ] [Thread-2 (]: 2 of 12 PASS not_null_stg_moma__artists_constituent_id ......................... [[32mPASS[0m in 0.14s]
+[0m21:03:17.727070 [debug] [Thread-2 (]: Finished running node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:03:17.725746 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: ROLLBACK
+[0m21:03:17.727992 [debug] [Thread-2 (]: Began running node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:03:17.728561 [info ] [Thread-2 (]: 5 of 12 START test not_null_stg_moma__data_dictionary_data_dictionary_sk ....... [RUN]
+[0m21:03:17.729503 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933, now test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e)
+[0m21:03:17.729759 [debug] [Thread-2 (]: Began compiling node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:03:17.734737 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:03:17.728919 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: Close
+[0m21:03:17.736234 [debug] [Thread-2 (]: Began executing node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:03:17.737594 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:03:17.735784 [info ] [Thread-1 (]: 1 of 12 PASS not_null_stg_moma__artists_artist_sk .............................. [[32mPASS[0m in 0.14s]
+[0m21:03:17.738347 [debug] [Thread-1 (]: Finished running node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:03:17.738794 [debug] [Thread-1 (]: Began running node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:03:17.739217 [info ] [Thread-1 (]: 6 of 12 START test not_null_stg_moma__data_dictionary_source_field ............. [RUN]
+[0m21:03:17.739601 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671, now test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7)
+[0m21:03:17.739829 [debug] [Thread-1 (]: Began compiling node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:03:17.745344 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:03:17.746399 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:03:17.746751 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: BEGIN
+[0m21:03:17.746962 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:03:17.747670 [debug] [Thread-1 (]: Began executing node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:03:17.752192 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:03:17.752654 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m21:03:17.753460 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:03:17.753795 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select data_dictionary_sk
+from "analytics"."main"."stg_moma__data_dictionary"
+where data_dictionary_sk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.754084 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:03:17.754653 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: BEGIN
+[0m21:03:17.754855 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:03:17.755421 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:03:17.755638 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:03:17.755843 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_field
+from "analytics"."main"."stg_moma__data_dictionary"
+where source_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.770697 [debug] [Thread-1 (]: SQL status: OK in 0.014 seconds
+[0m21:03:17.773240 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: ROLLBACK
+[0m21:03:17.774904 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: Close
+[0m21:03:17.775399 [debug] [Thread-2 (]: SQL status: OK in 0.021 seconds
+[0m21:03:17.777206 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: ROLLBACK
+[0m21:03:17.777857 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: Close
+[0m21:03:17.778583 [info ] [Thread-2 (]: 5 of 12 PASS not_null_stg_moma__data_dictionary_data_dictionary_sk ............. [[32mPASS[0m in 0.05s]
+[0m21:03:17.779278 [debug] [Thread-2 (]: Finished running node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:03:17.779723 [debug] [Thread-2 (]: Began running node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:03:17.780270 [info ] [Thread-2 (]: 7 of 12 START test not_null_stg_moma__data_dictionary_source_table ............. [RUN]
+[0m21:03:17.780933 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e, now test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a)
+[0m21:03:17.781327 [debug] [Thread-2 (]: Began compiling node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:03:17.786253 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:03:17.786934 [info ] [Thread-1 (]: 6 of 12 PASS not_null_stg_moma__data_dictionary_source_field ................... [[32mPASS[0m in 0.05s]
+[0m21:03:17.787683 [debug] [Thread-1 (]: Finished running node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:03:17.788023 [debug] [Thread-1 (]: Began running node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:03:17.788345 [info ] [Thread-1 (]: 8 of 12 START test unique_stg_moma__artists_artist_sk .......................... [RUN]
+[0m21:03:17.788660 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7, now test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72)
+[0m21:03:17.789308 [debug] [Thread-1 (]: Began compiling node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:03:17.795262 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:03:17.788957 [debug] [Thread-2 (]: Began executing node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:03:17.797226 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:03:17.798110 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:03:17.798904 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: BEGIN
+[0m21:03:17.799139 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:03:17.798476 [debug] [Thread-1 (]: Began executing node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:03:17.800528 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:03:17.800859 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m21:03:17.801339 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:03:17.801716 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_table
+from "analytics"."main"."stg_moma__data_dictionary"
+where source_table is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.802960 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:03:17.803333 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: BEGIN
+[0m21:03:17.803653 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:03:17.804282 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:03:17.804621 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:03:17.804944 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    artist_sk as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artists"
+where artist_sk is not null
+group by artist_sk
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.805628 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m21:03:17.806998 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: ROLLBACK
+[0m21:03:17.807435 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: Close
+[0m21:03:17.807857 [info ] [Thread-2 (]: 7 of 12 PASS not_null_stg_moma__data_dictionary_source_table ................... [[32mPASS[0m in 0.03s]
+[0m21:03:17.808208 [debug] [Thread-2 (]: Finished running node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:03:17.808442 [debug] [Thread-2 (]: Began running node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:03:17.808712 [info ] [Thread-2 (]: 9 of 12 START test unique_stg_moma__artists_constituent_id ..................... [RUN]
+[0m21:03:17.808994 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a, now test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c)
+[0m21:03:17.809198 [debug] [Thread-2 (]: Began compiling node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:03:17.813336 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:03:17.814213 [debug] [Thread-2 (]: Began executing node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:03:17.815367 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:03:17.816075 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:03:17.816317 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: BEGIN
+[0m21:03:17.816512 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:03:17.817027 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:03:17.817232 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:03:17.817424 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    constituent_id as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artists"
+where constituent_id is not null
+group by constituent_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.870707 [debug] [Thread-1 (]: SQL status: OK in 0.065 seconds
+[0m21:03:17.871357 [debug] [Thread-2 (]: SQL status: OK in 0.054 seconds
+[0m21:03:17.872854 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: ROLLBACK
+[0m21:03:17.873914 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: ROLLBACK
+[0m21:03:17.874334 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: Close
+[0m21:03:17.875037 [info ] [Thread-1 (]: 8 of 12 PASS unique_stg_moma__artists_artist_sk ................................ [[32mPASS[0m in 0.09s]
+[0m21:03:17.876067 [debug] [Thread-1 (]: Finished running node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:03:17.876494 [debug] [Thread-1 (]: Began running node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:03:17.876895 [info ] [Thread-1 (]: 10 of 12 START test unique_stg_moma__artworks_artwork_sk ....................... [RUN]
+[0m21:03:17.877370 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72, now test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4)
+[0m21:03:17.877599 [debug] [Thread-1 (]: Began compiling node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:03:17.881588 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:03:17.875486 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: Close
+[0m21:03:17.884487 [info ] [Thread-2 (]: 9 of 12 PASS unique_stg_moma__artists_constituent_id ........................... [[32mPASS[0m in 0.08s]
+[0m21:03:17.885069 [debug] [Thread-2 (]: Finished running node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:03:17.885433 [debug] [Thread-2 (]: Began running node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:03:17.885666 [info ] [Thread-2 (]: 11 of 12 START test unique_stg_moma__artworks_object_id ........................ [RUN]
+[0m21:03:17.886007 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c, now test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8)
+[0m21:03:17.886223 [debug] [Thread-2 (]: Began compiling node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:03:17.890910 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:03:17.891414 [debug] [Thread-1 (]: Began executing node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:03:17.893789 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:03:17.894780 [debug] [Thread-2 (]: Began executing node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:03:17.896589 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:03:17.897317 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:03:17.897609 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: BEGIN
+[0m21:03:17.897832 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:03:17.898424 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:03:17.898963 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: BEGIN
+[0m21:03:17.899626 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:03:17.899311 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:03:17.900315 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:03:17.901076 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    artwork_sk as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artworks"
+where artwork_sk is not null
+group by artwork_sk
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:17.901511 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m21:03:17.902125 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:03:17.902520 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    object_id as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artworks"
+where object_id is not null
+group by object_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:18.000856 [debug] [Thread-3 (]: SQL status: OK in 0.361 seconds
+[0m21:03:18.003268 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: ROLLBACK
+[0m21:03:18.003826 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: Close
+[0m21:03:18.004311 [info ] [Thread-3 (]: 3 of 12 PASS not_null_stg_moma__artworks_artwork_sk ............................ [[32mPASS[0m in 0.41s]
+[0m21:03:18.004687 [debug] [Thread-3 (]: Finished running node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:03:18.004933 [debug] [Thread-3 (]: Began running node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:03:18.005249 [info ] [Thread-3 (]: 12 of 12 START test unique_stg_moma__data_dictionary_data_dictionary_sk ........ [RUN]
+[0m21:03:18.005620 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b, now test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288)
+[0m21:03:18.005845 [debug] [Thread-3 (]: Began compiling node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:03:18.010080 [debug] [Thread-3 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:03:18.011143 [debug] [Thread-3 (]: Began executing node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:03:18.012379 [debug] [Thread-3 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:03:18.013143 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:03:18.013390 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: BEGIN
+[0m21:03:18.013584 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:03:18.014069 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m21:03:18.014299 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:03:18.014512 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    data_dictionary_sk as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__data_dictionary"
+where data_dictionary_sk is not null
+group by data_dictionary_sk
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:03:18.023825 [debug] [Thread-3 (]: SQL status: OK in 0.009 seconds
+[0m21:03:18.025834 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: ROLLBACK
+[0m21:03:18.026623 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: Close
+[0m21:03:18.027336 [info ] [Thread-3 (]: 12 of 12 PASS unique_stg_moma__data_dictionary_data_dictionary_sk .............. [[32mPASS[0m in 0.02s]
+[0m21:03:18.027961 [debug] [Thread-3 (]: Finished running node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:03:18.074532 [debug] [Thread-4 (]: SQL status: OK in 0.406 seconds
+[0m21:03:18.076601 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: ROLLBACK
+[0m21:03:18.077142 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: Close
+[0m21:03:18.077641 [info ] [Thread-4 (]: 4 of 12 PASS not_null_stg_moma__artworks_object_id ............................. [[32mPASS[0m in 0.49s]
+[0m21:03:18.078038 [debug] [Thread-4 (]: Finished running node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:03:18.295260 [debug] [Thread-2 (]: SQL status: OK in 0.392 seconds
+[0m21:03:18.300969 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: ROLLBACK
+[0m21:03:18.301906 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: Close
+[0m21:03:18.303124 [info ] [Thread-2 (]: 11 of 12 PASS unique_stg_moma__artworks_object_id .............................. [[32mPASS[0m in 0.42s]
+[0m21:03:18.303604 [debug] [Thread-2 (]: Finished running node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:03:18.305669 [debug] [Thread-1 (]: SQL status: OK in 0.404 seconds
+[0m21:03:18.307179 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: ROLLBACK
+[0m21:03:18.307671 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: Close
+[0m21:03:18.308106 [info ] [Thread-1 (]: 10 of 12 PASS unique_stg_moma__artworks_artwork_sk ............................. [[32mPASS[0m in 0.43s]
+[0m21:03:18.308455 [debug] [Thread-1 (]: Finished running node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:03:18.309655 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:03:18.309885 [debug] [MainThread]: On master: BEGIN
+[0m21:03:18.310078 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:03:18.310485 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:03:18.310678 [debug] [MainThread]: On master: COMMIT
+[0m21:03:18.310844 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:03:18.310993 [debug] [MainThread]: On master: COMMIT
+[0m21:03:18.311307 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:03:18.311497 [debug] [MainThread]: On master: Close
+[0m21:03:18.311758 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:03:18.311913 [debug] [MainThread]: Connection 'list_analytics_main' was properly closed.
+[0m21:03:18.312049 [debug] [MainThread]: Connection 'test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8' was properly closed.
+[0m21:03:18.312186 [debug] [MainThread]: Connection 'test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95' was properly closed.
+[0m21:03:18.312323 [debug] [MainThread]: Connection 'test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4' was properly closed.
+[0m21:03:18.312461 [debug] [MainThread]: Connection 'test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288' was properly closed.
+[0m21:03:18.312668 [info ] [MainThread]: 
+[0m21:03:18.312858 [info ] [MainThread]: Finished running 12 data tests in 0 hours 0 minutes and 0.85 seconds (0.85s).
+[0m21:03:18.313996 [debug] [MainThread]: Command end result
+[0m21:03:18.374151 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:03:18.378023 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:03:18.380577 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:03:18.387463 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\MOMA\target\run_results.json
+[0m21:03:18.387841 [info ] [MainThread]: 
+[0m21:03:18.388168 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:03:18.388411 [info ] [MainThread]: 
+[0m21:03:18.388669 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=12
+[0m21:03:18.389491 [debug] [MainThread]: Command `dbt test` succeeded at 21:03:18.389399 after 1.98 seconds
+[0m21:03:18.389784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A823ABE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A82475A70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027A82475BD0>]}
+[0m21:03:18.390048 [debug] [MainThread]: Flushing usage events
+[0m21:03:19.047513 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:21:31.116817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8A66A270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD882A0CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8CFC7C50>]}
+
+
+============================== 21:21:31.126880 | 10cad796-3a34-4abe-ad50-925da36afea9 ==============================
+[0m21:21:31.126880 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:21:31.128222 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --select staging --profiles-dir .', 'log_path': 'C:\\MOMA\\logs'}
+[0m21:21:31.488832 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8D0CCE90>]}
+[0m21:21:31.535541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8D2E6360>]}
+[0m21:21:31.539508 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:21:31.686111 [debug] [MainThread]: checksum: 5c67227a763f404f3ccc21af65ef601c75dcb0fe022e77464793574c2eff3edf, vars: {}, profile: duckdb_profile, target: dev, version: 1.12.4
+[0m21:21:31.881679 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:21:31.882050 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:21:31.882263 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:21:31.888597 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.analytics_project.marts
+- models.analytics_project.intermediate
+[0m21:21:31.900845 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8D67C150>]}
+[0m21:21:31.988101 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:21:31.991840 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:21:32.043150 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:21:32.056594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8D8698B0>]}
+[0m21:21:32.057021 [info ] [MainThread]: Found 3 models, 12 data tests, 500 macros
+[0m21:21:32.057288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8D837D90>]}
+[0m21:21:32.060295 [info ] [MainThread]: 
+[0m21:21:32.060669 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:21:32.060888 [info ] [MainThread]: 
+[0m21:21:32.061275 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:21:32.064484 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m21:21:32.112627 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m21:21:32.113179 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m21:21:32.113558 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:21:32.167665 [debug] [ThreadPool]: SQL status: OK in 0.054 seconds
+[0m21:21:32.169819 [debug] [ThreadPool]: On list_analytics: Close
+[0m21:21:32.170503 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main)
+[0m21:21:32.171106 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main"
+"
+[0m21:21:32.177973 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:21:32.178242 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type != 'duckdb'
+    
+  
+[0m21:21:32.178433 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m21:21:32.179751 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:21:32.180900 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:21:32.181299 [debug] [ThreadPool]: On create_analytics_main: BEGIN
+[0m21:21:32.181938 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:21:32.182149 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:21:32.182319 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_analytics_main"} */
+
+    
+    
+        create schema if not exists "analytics"."main"
+    
+[0m21:21:32.183824 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:21:32.184384 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m21:21:32.184577 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m21:21:32.184745 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m21:21:32.185032 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m21:21:32.185218 [debug] [ThreadPool]: On create_analytics_main: Close
+[0m21:21:32.187606 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics_main'
+[0m21:21:32.191974 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:21:32.192322 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m21:21:32.192593 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:21:32.193220 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m21:21:32.193513 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:21:32.193785 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m21:21:32.203328 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m21:21:32.204642 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m21:21:32.205490 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m21:21:32.206481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8DA26270>]}
+[0m21:21:32.206814 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:32.206992 [debug] [MainThread]: On master: BEGIN
+[0m21:21:32.207168 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:21:32.207504 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:21:32.207696 [debug] [MainThread]: On master: COMMIT
+[0m21:21:32.207853 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:32.208001 [debug] [MainThread]: On master: COMMIT
+[0m21:21:32.208238 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:21:32.208399 [debug] [MainThread]: On master: Close
+[0m21:21:32.215916 [debug] [Thread-2 (]: Began running node model.analytics_project.stg_moma__artworks
+[0m21:21:32.216392 [info ] [Thread-2 (]: 2 of 3 START sql view model main.stg_moma__artworks ............................ [RUN]
+[0m21:21:32.216809 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.analytics_project.stg_moma__artworks'
+[0m21:21:32.217972 [debug] [Thread-2 (]: Began compiling node model.analytics_project.stg_moma__artworks
+[0m21:21:32.221065 [debug] [Thread-2 (]: Writing injected SQL for node "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.217785 [debug] [Thread-1 (]: Began running node model.analytics_project.stg_moma__artists
+[0m21:21:32.222006 [info ] [Thread-1 (]: 1 of 3 START sql view model main.stg_moma__artists ............................. [RUN]
+[0m21:21:32.217567 [debug] [Thread-3 (]: Began running node model.analytics_project.stg_moma__data_dictionary
+[0m21:21:32.223641 [info ] [Thread-3 (]: 3 of 3 START sql view model main.stg_moma__data_dictionary ..................... [RUN]
+[0m21:21:32.223956 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.analytics_project.stg_moma__data_dictionary'
+[0m21:21:32.224161 [debug] [Thread-3 (]: Began compiling node model.analytics_project.stg_moma__data_dictionary
+[0m21:21:32.224746 [debug] [Thread-3 (]: Writing injected SQL for node "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.225350 [debug] [Thread-3 (]: Began executing node model.analytics_project.stg_moma__data_dictionary
+[0m21:21:32.223072 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.analytics_project.stg_moma__artists'
+[0m21:21:32.223359 [debug] [Thread-2 (]: Began executing node model.analytics_project.stg_moma__artworks
+[0m21:21:32.247434 [debug] [Thread-2 (]: Writing runtime sql for node "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.245584 [debug] [Thread-1 (]: Began compiling node model.analytics_project.stg_moma__artists
+[0m21:21:32.249032 [debug] [Thread-1 (]: Writing injected SQL for node "model.analytics_project.stg_moma__artists"
+[0m21:21:32.248292 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.245098 [debug] [Thread-3 (]: Writing runtime sql for node "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.249376 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: BEGIN
+[0m21:21:32.249973 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:21:32.250680 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m21:21:32.250931 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.251259 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artworks"} */
+
+  
+  create view "analytics"."main"."stg_moma__artworks__dbt_tmp" as (
+    with source as (
+
+    select *
+    from read_csv_auto('data/raw/Artworks.csv', header = true, sample_size = -1)
+
+),
+
+renamed as (
+
+    select
+        try_cast("ObjectID" as integer) as object_id,
+        try_cast("Title" as varchar) as title,
+        try_cast("Artist" as varchar) as artist_name,
+        try_cast("ConstituentID" as varchar) as constituent_ids,
+        try_cast("ArtistBio" as varchar) as artist_bio,
+        try_cast("Nationality" as varchar) as nationality,
+        try_cast("BeginDate" as varchar) as artist_begin_date,
+        try_cast("EndDate" as varchar) as artist_end_date,
+        try_cast("Gender" as varchar) as gender,
+        try_cast("Date" as varchar) as artwork_date,
+        try_cast("Medium" as varchar) as medium,
+        try_cast("Dimensions" as varchar) as dimensions,
+        try_cast("CreditLine" as varchar) as credit_line,
+        try_cast("AccessionNumber" as varchar) as accession_number,
+        try_cast("Classification" as varchar) as classification,
+        try_cast("Department" as varchar) as department,
+        try_cast("DateAcquired" as date) as date_acquired,
+        try_cast("Cataloged" as varchar) as cataloged,
+        try_cast("URL" as varchar) as url,
+        try_cast("ImageURL" as varchar) as image_url,
+        try_cast("OnView" as varchar) as on_view,
+        try_cast("Circumference (cm)" as double) as circumference_cm,
+        try_cast("Depth (cm)" as double) as depth_cm,
+        try_cast("Diameter (cm)" as double) as diameter_cm,
+        try_cast("Height (cm)" as double) as height_cm,
+        try_cast("Length (cm)" as double) as length_cm,
+        try_cast("Weight (kg)" as double) as weight_kg,
+        try_cast("Width (cm)" as double) as width_cm,
+        try_cast("Seat Height (cm)" as double) as seat_height_cm,
+        try_cast("Duration (sec.)" as double) as duration_sec
+    from source
+
+),
+
+cleaned as (
+
+    select
+        object_id,
+        nullif(trim(title), '') as title,
+        nullif(trim(artist_name), '') as artist_name,
+        nullif(trim(constituent_ids), '') as constituent_ids,
+        nullif(trim(replace(replace(artist_bio, '(', ''), ')', '')), '') as artist_bio,
+        nullif(trim(replace(replace(nationality, '(', ''), ')', '')), '') as nationality,
+        nullif(trim(replace(replace(artist_begin_date, '(', ''), ')', '')), '') as artist_begin_date,
+        nullif(trim(replace(replace(artist_end_date, '(', ''), ')', '')), '') as artist_end_date,
+        nullif(lower(trim(replace(replace(gender, '(', ''), ')', ''))), '') as gender,
+        nullif(trim(artwork_date), '') as artwork_date,
+        nullif(trim(medium), '') as medium,
+        nullif(trim(dimensions), '') as dimensions,
+        nullif(trim(credit_line), '') as credit_line,
+        nullif(trim(accession_number), '') as accession_number,
+        nullif(trim(classification), '') as classification,
+        nullif(trim(department), '') as department,
+        date_acquired,
+        try_cast(
+            case
+                when upper(trim(cataloged)) = 'Y' then 'true'
+                when upper(trim(cataloged)) = 'N' then 'false'
+            end as boolean
+        ) as is_cataloged,
+        nullif(trim(url), '') as url,
+        nullif(trim(image_url), '') as image_url,
+        nullif(trim(on_view), '') as on_view,
+        circumference_cm,
+        depth_cm,
+        diameter_cm,
+        height_cm,
+        length_cm,
+        weight_kg,
+        width_cm,
+        seat_height_cm,
+        duration_sec
+    from renamed
+    where object_id is not null
+
+),
+
+deduplicated as (
+
+    select *
+    from cleaned
+    qualify row_number() over (
+        partition by object_id
+        order by accession_number
+    ) = 1
+
+),
+
+final as (
+
+    select
+        md5(cast(object_id as varchar)) as artwork_sk,
+        object_id,
+        title,
+        artist_name,
+        constituent_ids,
+        artist_bio,
+        nationality,
+        artist_begin_date,
+        artist_end_date,
+        gender,
+        artwork_date,
+        medium,
+        dimensions,
+        credit_line,
+        accession_number,
+        classification,
+        department,
+        date_acquired,
+        is_cataloged,
+        url,
+        image_url,
+        on_view,
+        circumference_cm,
+        depth_cm,
+        diameter_cm,
+        height_cm,
+        length_cm,
+        weight_kg,
+        width_cm,
+        seat_height_cm,
+        duration_sec
+    from deduplicated
+
+)
+
+select * from final
+  );
+
+[0m21:21:32.253170 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.253658 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: BEGIN
+[0m21:21:32.254005 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:21:32.254603 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m21:21:32.254841 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.255106 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__data_dictionary"} */
+
+  
+  create view "analytics"."main"."stg_moma__data_dictionary__dbt_tmp" as (
+    with source as (
+
+    select *
+    from read_csv_auto('data/raw/MoMA_data_dictionary.csv', header = true, sample_size = -1)
+
+),
+
+renamed as (
+
+    select
+        try_cast("Table" as varchar) as source_table,
+        try_cast("Field" as varchar) as source_field,
+        try_cast("Description" as varchar) as field_description
+    from source
+
+),
+
+cleaned as (
+
+    select
+        nullif(trim(source_table), '') as source_table,
+        nullif(trim(source_field), '') as source_field,
+        nullif(trim(field_description), '') as field_description
+    from renamed
+    where source_table is not null
+      and source_field is not null
+
+),
+
+deduplicated as (
+
+    select *
+    from cleaned
+    qualify row_number() over (
+        partition by source_table, source_field
+        order by field_description
+    ) = 1
+
+),
+
+final as (
+
+    select
+        md5(source_table || '|' || source_field) as data_dictionary_sk,
+        source_table,
+        source_field,
+        field_description
+    from deduplicated
+
+)
+
+select * from final
+  );
+
+[0m21:21:32.255590 [debug] [Thread-1 (]: Began executing node model.analytics_project.stg_moma__artists
+[0m21:21:32.257404 [debug] [Thread-1 (]: Writing runtime sql for node "model.analytics_project.stg_moma__artists"
+[0m21:21:32.258483 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:21:32.258786 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: BEGIN
+[0m21:21:32.258988 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:21:32.259408 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:21:32.259606 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:21:32.259818 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artists"} */
+
+  
+  create view "analytics"."main"."stg_moma__artists__dbt_tmp" as (
+    with source as (
+
+    select *
+    from read_csv_auto('data/raw/Artists.csv', header = true, sample_size = -1)
+
+),
+
+renamed as (
+
+    select
+        try_cast("ConstituentID" as integer) as constituent_id,
+        try_cast("DisplayName" as varchar) as display_name,
+        try_cast("ArtistBio" as varchar) as artist_bio,
+        try_cast("Nationality" as varchar) as nationality,
+        try_cast("Gender" as varchar) as gender,
+        try_cast("BeginDate" as integer) as begin_date,
+        try_cast("EndDate" as integer) as end_date,
+        try_cast("Wiki QID" as varchar) as wiki_qid,
+        try_cast("ULAN" as bigint) as ulan_id
+    from source
+
+),
+
+cleaned as (
+
+    select
+        constituent_id,
+        nullif(trim(display_name), '') as display_name,
+        nullif(trim(artist_bio), '') as artist_bio,
+        nullif(trim(nationality), '') as nationality,
+        nullif(lower(trim(gender)), '') as gender,
+        nullif(begin_date, 0) as begin_date,
+        nullif(end_date, 0) as end_date,
+        nullif(trim(wiki_qid), '') as wiki_qid,
+        ulan_id
+    from renamed
+    where constituent_id is not null
+
+),
+
+deduplicated as (
+
+    select *
+    from cleaned
+    qualify row_number() over (
+        partition by constituent_id
+        order by display_name
+    ) = 1
+
+),
+
+final as (
+
+    select
+        md5(cast(constituent_id as varchar)) as artist_sk,
+        constituent_id,
+        display_name,
+        artist_bio,
+        nationality,
+        gender,
+        begin_date,
+        end_date,
+        wiki_qid,
+        ulan_id
+    from deduplicated
+
+)
+
+select * from final
+  );
+
+[0m21:21:32.323363 [debug] [Thread-3 (]: SQL status: OK in 0.068 seconds
+[0m21:21:32.327295 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.327594 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__data_dictionary"} */
+alter view "analytics"."main"."stg_moma__data_dictionary" rename to "stg_moma__data_dictionary__dbt_backup"
+[0m21:21:32.328308 [debug] [Thread-1 (]: SQL status: OK in 0.068 seconds
+[0m21:21:32.329642 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:21:32.329873 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artists"} */
+alter view "analytics"."main"."stg_moma__artists" rename to "stg_moma__artists__dbt_backup"
+[0m21:21:32.330297 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m21:21:32.332217 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.332586 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__data_dictionary"} */
+alter view "analytics"."main"."stg_moma__data_dictionary__dbt_tmp" rename to "stg_moma__data_dictionary"
+[0m21:21:32.333093 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m21:21:32.337102 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:21:32.337809 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artists"} */
+alter view "analytics"."main"."stg_moma__artists__dbt_tmp" rename to "stg_moma__artists"
+[0m21:21:32.338198 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m21:21:32.349863 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: COMMIT
+[0m21:21:32.350205 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.350414 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: COMMIT
+[0m21:21:32.350915 [debug] [Thread-1 (]: SQL status: OK in 0.012 seconds
+[0m21:21:32.352649 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: COMMIT
+[0m21:21:32.353042 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:21:32.353378 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: COMMIT
+[0m21:21:32.355284 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m21:21:32.359608 [debug] [Thread-3 (]: Using duckdb connection "model.analytics_project.stg_moma__data_dictionary"
+[0m21:21:32.360076 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__data_dictionary"} */
+
+      drop view if exists "analytics"."main"."stg_moma__data_dictionary__dbt_backup" cascade
+    
+[0m21:21:32.361027 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m21:21:32.362054 [debug] [Thread-1 (]: Using duckdb connection "model.analytics_project.stg_moma__artists"
+[0m21:21:32.362280 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artists"} */
+
+      drop view if exists "analytics"."main"."stg_moma__artists__dbt_backup" cascade
+    
+[0m21:21:32.363791 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m21:21:32.365668 [debug] [Thread-3 (]: On model.analytics_project.stg_moma__data_dictionary: Close
+[0m21:21:32.366069 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m21:21:32.367347 [debug] [Thread-1 (]: On model.analytics_project.stg_moma__artists: Close
+[0m21:21:32.370245 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8DA85010>]}
+[0m21:21:32.370554 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8AB8B960>]}
+[0m21:21:32.371688 [info ] [Thread-1 (]: 1 of 3 OK created sql view model main.stg_moma__artists ........................ [[32mOK[0m in 0.15s]
+[0m21:21:32.372301 [debug] [Thread-1 (]: Finished running node model.analytics_project.stg_moma__artists
+[0m21:21:32.371133 [info ] [Thread-3 (]: 3 of 3 OK created sql view model main.stg_moma__data_dictionary ................ [[32mOK[0m in 0.14s]
+[0m21:21:32.372943 [debug] [Thread-3 (]: Finished running node model.analytics_project.stg_moma__data_dictionary
+[0m21:21:32.540171 [debug] [Thread-2 (]: SQL status: OK in 0.288 seconds
+[0m21:21:32.542583 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.542847 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artworks"} */
+alter view "analytics"."main"."stg_moma__artworks" rename to "stg_moma__artworks__dbt_backup"
+[0m21:21:32.543639 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m21:21:32.544906 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.545128 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artworks"} */
+alter view "analytics"."main"."stg_moma__artworks__dbt_tmp" rename to "stg_moma__artworks"
+[0m21:21:32.545606 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:21:32.546590 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: COMMIT
+[0m21:21:32.546824 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.547014 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: COMMIT
+[0m21:21:32.578342 [debug] [Thread-2 (]: SQL status: OK in 0.031 seconds
+[0m21:21:32.579672 [debug] [Thread-2 (]: Using duckdb connection "model.analytics_project.stg_moma__artworks"
+[0m21:21:32.579919 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.analytics_project.stg_moma__artworks"} */
+
+      drop view if exists "analytics"."main"."stg_moma__artworks__dbt_backup" cascade
+    
+[0m21:21:32.581728 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m21:21:32.582612 [debug] [Thread-2 (]: On model.analytics_project.stg_moma__artworks: Close
+[0m21:21:32.583075 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '10cad796-3a34-4abe-ad50-925da36afea9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8EC387D0>]}
+[0m21:21:32.583523 [info ] [Thread-2 (]: 2 of 3 OK created sql view model main.stg_moma__artworks ....................... [[32mOK[0m in 0.37s]
+[0m21:21:32.583867 [debug] [Thread-2 (]: Finished running node model.analytics_project.stg_moma__artworks
+[0m21:21:32.585504 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:32.585717 [debug] [MainThread]: On master: BEGIN
+[0m21:21:32.585883 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:21:32.586264 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:21:32.586452 [debug] [MainThread]: On master: COMMIT
+[0m21:21:32.586608 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:32.586760 [debug] [MainThread]: On master: COMMIT
+[0m21:21:32.587023 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:21:32.587195 [debug] [MainThread]: On master: Close
+[0m21:21:32.587455 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:21:32.587609 [debug] [MainThread]: Connection 'create_analytics_main' was properly closed.
+[0m21:21:32.587744 [debug] [MainThread]: Connection 'list_analytics_main' was properly closed.
+[0m21:21:32.587872 [debug] [MainThread]: Connection 'model.analytics_project.stg_moma__artworks' was properly closed.
+[0m21:21:32.588002 [debug] [MainThread]: Connection 'model.analytics_project.stg_moma__artists' was properly closed.
+[0m21:21:32.588131 [debug] [MainThread]: Connection 'model.analytics_project.stg_moma__data_dictionary' was properly closed.
+[0m21:21:32.588470 [info ] [MainThread]: 
+[0m21:21:32.588920 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 0.53 seconds (0.53s).
+[0m21:21:32.589873 [debug] [MainThread]: Command end result
+[0m21:21:32.632608 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:21:32.636791 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:21:32.639352 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:21:32.646159 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\MOMA\target\run_results.json
+[0m21:21:32.646459 [info ] [MainThread]: 
+[0m21:21:32.646775 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:21:32.647058 [info ] [MainThread]: 
+[0m21:21:32.647378 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m21:21:32.648207 [debug] [MainThread]: Command `dbt run` succeeded at 21:21:32.648124 after 1.77 seconds
+[0m21:21:32.648495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8D7A2DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8DB61A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DD8CFE39A0>]}
+[0m21:21:32.648734 [debug] [MainThread]: Flushing usage events
+[0m21:21:33.316803 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:21:48.535332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C470DA270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C44D0CCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C49A3BC50>]}
+
+
+============================== 21:21:48.543693 | e5416e28-3cca-4f8b-b3bb-e228c5f95b49 ==============================
+[0m21:21:48.543693 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:21:48.544591 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt test --select staging --profiles-dir .', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\MOMA\\logs'}
+[0m21:21:48.750007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e5416e28-3cca-4f8b-b3bb-e228c5f95b49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C49B3CE90>]}
+[0m21:21:48.802546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e5416e28-3cca-4f8b-b3bb-e228c5f95b49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C49D32360>]}
+[0m21:21:48.805687 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m21:21:48.947369 [debug] [MainThread]: checksum: 5c67227a763f404f3ccc21af65ef601c75dcb0fe022e77464793574c2eff3edf, vars: {}, profile: duckdb_profile, target: dev, version: 1.12.4
+[0m21:21:49.068820 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:21:49.070838 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m21:21:49.071076 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:21:49.076178 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.analytics_project.intermediate
+- models.analytics_project.marts
+[0m21:21:49.079236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e5416e28-3cca-4f8b-b3bb-e228c5f95b49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4A0D0150>]}
+[0m21:21:49.174665 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:21:49.178309 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:21:49.199867 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:21:49.267062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e5416e28-3cca-4f8b-b3bb-e228c5f95b49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4A03F890>]}
+[0m21:21:49.267698 [info ] [MainThread]: Found 3 models, 12 data tests, 500 macros
+[0m21:21:49.268085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e5416e28-3cca-4f8b-b3bb-e228c5f95b49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4A2FFE70>]}
+[0m21:21:49.272564 [info ] [MainThread]: 
+[0m21:21:49.273869 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:21:49.274833 [info ] [MainThread]: 
+[0m21:21:49.276095 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m21:21:49.280559 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics_main'
+[0m21:21:49.325190 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:21:49.325629 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m21:21:49.326387 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:21:49.377881 [debug] [ThreadPool]: SQL status: OK in 0.051 seconds
+[0m21:21:49.378675 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m21:21:49.378972 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m21:21:49.382830 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m21:21:49.385395 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m21:21:49.385942 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m21:21:49.387708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e5416e28-3cca-4f8b-b3bb-e228c5f95b49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4A5D4A10>]}
+[0m21:21:49.389244 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:49.390058 [debug] [MainThread]: On master: BEGIN
+[0m21:21:49.390548 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:21:49.392047 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m21:21:49.392310 [debug] [MainThread]: On master: COMMIT
+[0m21:21:49.392522 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:49.392705 [debug] [MainThread]: On master: COMMIT
+[0m21:21:49.393040 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:21:49.393257 [debug] [MainThread]: On master: Close
+[0m21:21:49.397201 [debug] [Thread-1 (]: Began running node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:21:49.397532 [info ] [Thread-1 (]: 1 of 12 START test not_null_stg_moma__artists_artist_sk ........................ [RUN]
+[0m21:21:49.397910 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671'
+[0m21:21:49.398616 [debug] [Thread-1 (]: Began compiling node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:21:49.398426 [debug] [Thread-3 (]: Began running node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:21:49.445454 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:21:49.446287 [debug] [Thread-2 (]: Began running node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:21:49.447069 [info ] [Thread-2 (]: 2 of 12 START test not_null_stg_moma__artists_constituent_id ................... [RUN]
+[0m21:21:49.398213 [debug] [Thread-4 (]: Began running node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:21:49.449148 [info ] [Thread-4 (]: 4 of 12 START test not_null_stg_moma__artworks_object_id ....................... [RUN]
+[0m21:21:49.449570 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95'
+[0m21:21:49.436959 [info ] [Thread-3 (]: 3 of 12 START test not_null_stg_moma__artworks_artwork_sk ...................... [RUN]
+[0m21:21:49.450174 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b'
+[0m21:21:49.448766 [debug] [Thread-1 (]: Began executing node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:21:49.448282 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933'
+[0m21:21:49.449826 [debug] [Thread-4 (]: Began compiling node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:21:49.450386 [debug] [Thread-3 (]: Began compiling node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:21:49.465797 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:21:49.466183 [debug] [Thread-2 (]: Began compiling node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:21:49.470756 [debug] [Thread-4 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:21:49.475779 [debug] [Thread-3 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:21:49.479966 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:21:49.480886 [debug] [Thread-4 (]: Began executing node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:21:49.482989 [debug] [Thread-4 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:21:49.481411 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:21:49.484424 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: BEGIN
+[0m21:21:49.484702 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m21:21:49.485382 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m21:21:49.485601 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"
+[0m21:21:49.483855 [debug] [Thread-3 (]: Began executing node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:21:49.487662 [debug] [Thread-3 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:21:49.483381 [debug] [Thread-2 (]: Began executing node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:21:49.485803 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist_sk
+from "analytics"."main"."stg_moma__artists"
+where artist_sk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.489071 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:21:49.489545 [debug] [Thread-4 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:21:49.489876 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:21:49.492399 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: BEGIN
+[0m21:21:49.492613 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:21:49.493093 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.493414 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"
+[0m21:21:49.493687 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artwork_sk
+from "analytics"."main"."stg_moma__artworks"
+where artwork_sk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.491799 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:21:49.495848 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: BEGIN
+[0m21:21:49.496265 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:21:49.496646 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.496851 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"
+[0m21:21:49.497041 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select constituent_id
+from "analytics"."main"."stg_moma__artists"
+where constituent_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.492065 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: BEGIN
+[0m21:21:49.509862 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:21:49.511193 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m21:21:49.511494 [debug] [Thread-4 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"
+[0m21:21:49.511706 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select object_id
+from "analytics"."main"."stg_moma__artworks"
+where object_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.585675 [debug] [Thread-1 (]: SQL status: OK in 0.095 seconds
+[0m21:21:49.586445 [debug] [Thread-2 (]: SQL status: OK in 0.089 seconds
+[0m21:21:49.590655 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: ROLLBACK
+[0m21:21:49.591194 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933: Close
+[0m21:21:49.591647 [info ] [Thread-2 (]: 2 of 12 PASS not_null_stg_moma__artists_constituent_id ......................... [[32mPASS[0m in 0.14s]
+[0m21:21:49.592031 [debug] [Thread-2 (]: Finished running node test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933
+[0m21:21:49.592272 [debug] [Thread-2 (]: Began running node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:21:49.589498 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: ROLLBACK
+[0m21:21:49.592545 [info ] [Thread-2 (]: 5 of 12 START test not_null_stg_moma__data_dictionary_data_dictionary_sk ....... [RUN]
+[0m21:21:49.593069 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__artists_constituent_id.fb45056933, now test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e)
+[0m21:21:49.593545 [debug] [Thread-2 (]: Began compiling node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:21:49.597364 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:21:49.598136 [debug] [Thread-2 (]: Began executing node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:21:49.599276 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:21:49.593324 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671: Close
+[0m21:21:49.600000 [info ] [Thread-1 (]: 1 of 12 PASS not_null_stg_moma__artists_artist_sk .............................. [[32mPASS[0m in 0.20s]
+[0m21:21:49.600373 [debug] [Thread-1 (]: Finished running node test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671
+[0m21:21:49.600689 [debug] [Thread-1 (]: Began running node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:21:49.601181 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:21:49.601525 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: BEGIN
+[0m21:21:49.601733 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:21:49.600947 [info ] [Thread-1 (]: 6 of 12 START test not_null_stg_moma__data_dictionary_source_field ............. [RUN]
+[0m21:21:49.602405 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__artists_artist_sk.b275a45671, now test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7)
+[0m21:21:49.602606 [debug] [Thread-1 (]: Began compiling node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:21:49.606386 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:21:49.602152 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.606721 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"
+[0m21:21:49.606971 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select data_dictionary_sk
+from "analytics"."main"."stg_moma__data_dictionary"
+where data_dictionary_sk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.607496 [debug] [Thread-1 (]: Began executing node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:21:49.608647 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:21:49.609373 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:21:49.609597 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: BEGIN
+[0m21:21:49.609815 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:21:49.610239 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.610452 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"
+[0m21:21:49.610643 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_field
+from "analytics"."main"."stg_moma__data_dictionary"
+where source_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.621419 [debug] [Thread-1 (]: SQL status: OK in 0.010 seconds
+[0m21:21:49.621993 [debug] [Thread-2 (]: SQL status: OK in 0.015 seconds
+[0m21:21:49.623132 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: ROLLBACK
+[0m21:21:49.624147 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: ROLLBACK
+[0m21:21:49.624471 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e: Close
+[0m21:21:49.624924 [info ] [Thread-2 (]: 5 of 12 PASS not_null_stg_moma__data_dictionary_data_dictionary_sk ............. [[32mPASS[0m in 0.03s]
+[0m21:21:49.625285 [debug] [Thread-2 (]: Finished running node test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e
+[0m21:21:49.625526 [debug] [Thread-2 (]: Began running node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:21:49.625733 [info ] [Thread-2 (]: 7 of 12 START test not_null_stg_moma__data_dictionary_source_table ............. [RUN]
+[0m21:21:49.625966 [debug] [Thread-1 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7: Close
+[0m21:21:49.628834 [info ] [Thread-1 (]: 6 of 12 PASS not_null_stg_moma__data_dictionary_source_field ................... [[32mPASS[0m in 0.03s]
+[0m21:21:49.629242 [debug] [Thread-1 (]: Finished running node test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7
+[0m21:21:49.629991 [debug] [Thread-1 (]: Began running node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:21:49.630230 [info ] [Thread-1 (]: 8 of 12 START test unique_stg_moma__artists_artist_sk .......................... [RUN]
+[0m21:21:49.630527 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__data_dictionary_source_field.3f7683edf7, now test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72)
+[0m21:21:49.630836 [debug] [Thread-1 (]: Began compiling node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:21:49.636347 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:21:49.629647 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__data_dictionary_data_dictionary_sk.08b230e18e, now test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a)
+[0m21:21:49.636869 [debug] [Thread-2 (]: Began compiling node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:21:49.642599 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:21:49.643707 [debug] [Thread-1 (]: Began executing node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:21:49.645140 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:21:49.644000 [debug] [Thread-2 (]: Began executing node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:21:49.646253 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:21:49.647189 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:21:49.647672 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: BEGIN
+[0m21:21:49.647907 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:21:49.648435 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.648656 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"
+[0m21:21:49.648859 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_table
+from "analytics"."main"."stg_moma__data_dictionary"
+where source_table is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.649536 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:21:49.649784 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: BEGIN
+[0m21:21:49.649974 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:21:49.650406 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.650622 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"
+[0m21:21:49.650824 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    artist_sk as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artists"
+where artist_sk is not null
+group by artist_sk
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.653594 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m21:21:49.654885 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: ROLLBACK
+[0m21:21:49.655322 [debug] [Thread-2 (]: On test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a: Close
+[0m21:21:49.655856 [info ] [Thread-2 (]: 7 of 12 PASS not_null_stg_moma__data_dictionary_source_table ................... [[32mPASS[0m in 0.03s]
+[0m21:21:49.656373 [debug] [Thread-2 (]: Finished running node test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a
+[0m21:21:49.657036 [debug] [Thread-2 (]: Began running node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:21:49.657293 [info ] [Thread-2 (]: 9 of 12 START test unique_stg_moma__artists_constituent_id ..................... [RUN]
+[0m21:21:49.657802 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__data_dictionary_source_table.1ee1f4ab3a, now test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c)
+[0m21:21:49.658037 [debug] [Thread-2 (]: Began compiling node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:21:49.662264 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:21:49.663184 [debug] [Thread-2 (]: Began executing node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:21:49.664352 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:21:49.665028 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:21:49.665266 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: BEGIN
+[0m21:21:49.665455 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:21:49.665959 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.666178 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"
+[0m21:21:49.666380 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    constituent_id as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artists"
+where constituent_id is not null
+group by constituent_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.762497 [debug] [Thread-2 (]: SQL status: OK in 0.096 seconds
+[0m21:21:49.763968 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: ROLLBACK
+[0m21:21:49.764535 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c: Close
+[0m21:21:49.765013 [info ] [Thread-2 (]: 9 of 12 PASS unique_stg_moma__artists_constituent_id ........................... [[32mPASS[0m in 0.11s]
+[0m21:21:49.765389 [debug] [Thread-2 (]: Finished running node test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c
+[0m21:21:49.765655 [debug] [Thread-2 (]: Began running node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:21:49.765938 [info ] [Thread-2 (]: 10 of 12 START test unique_stg_moma__artworks_artwork_sk ....................... [RUN]
+[0m21:21:49.766278 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.analytics_project.unique_stg_moma__artists_constituent_id.68f5594d6c, now test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4)
+[0m21:21:49.766501 [debug] [Thread-2 (]: Began compiling node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:21:49.774765 [debug] [Thread-2 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:21:49.776796 [debug] [Thread-2 (]: Began executing node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:21:49.778693 [debug] [Thread-2 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:21:49.780950 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:21:49.781296 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: BEGIN
+[0m21:21:49.781501 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m21:21:49.781996 [debug] [Thread-1 (]: SQL status: OK in 0.131 seconds
+[0m21:21:49.782614 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m21:21:49.782871 [debug] [Thread-2 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"
+[0m21:21:49.783101 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    artwork_sk as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artworks"
+where artwork_sk is not null
+group by artwork_sk
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:49.787040 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: ROLLBACK
+[0m21:21:49.787747 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72: Close
+[0m21:21:49.788400 [info ] [Thread-1 (]: 8 of 12 PASS unique_stg_moma__artists_artist_sk ................................ [[32mPASS[0m in 0.16s]
+[0m21:21:49.789006 [debug] [Thread-1 (]: Finished running node test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72
+[0m21:21:49.789384 [debug] [Thread-1 (]: Began running node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:21:49.789711 [info ] [Thread-1 (]: 11 of 12 START test unique_stg_moma__artworks_object_id ........................ [RUN]
+[0m21:21:49.790138 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.analytics_project.unique_stg_moma__artists_artist_sk.e8e3efbf72, now test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8)
+[0m21:21:49.790469 [debug] [Thread-1 (]: Began compiling node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:21:49.800658 [debug] [Thread-1 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:21:49.801982 [debug] [Thread-1 (]: Began executing node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:21:49.803891 [debug] [Thread-1 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:21:49.805080 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:21:49.805361 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: BEGIN
+[0m21:21:49.805589 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m21:21:49.806092 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m21:21:49.806318 [debug] [Thread-1 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"
+[0m21:21:49.806532 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    object_id as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__artworks"
+where object_id is not null
+group by object_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:50.018595 [debug] [Thread-3 (]: SQL status: OK in 0.524 seconds
+[0m21:21:50.021846 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: ROLLBACK
+[0m21:21:50.022641 [debug] [Thread-3 (]: On test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b: Close
+[0m21:21:50.023435 [info ] [Thread-3 (]: 3 of 12 PASS not_null_stg_moma__artworks_artwork_sk ............................ [[32mPASS[0m in 0.57s]
+[0m21:21:50.024280 [debug] [Thread-3 (]: Finished running node test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b
+[0m21:21:50.024897 [debug] [Thread-3 (]: Began running node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:21:50.025352 [info ] [Thread-3 (]: 12 of 12 START test unique_stg_moma__data_dictionary_data_dictionary_sk ........ [RUN]
+[0m21:21:50.025941 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.analytics_project.not_null_stg_moma__artworks_artwork_sk.3e700ea90b, now test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288)
+[0m21:21:50.026215 [debug] [Thread-3 (]: Began compiling node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:21:50.030500 [debug] [Thread-3 (]: Writing injected SQL for node "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:21:50.031600 [debug] [Thread-3 (]: Began executing node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:21:50.032921 [debug] [Thread-3 (]: Writing runtime sql for node "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:21:50.033821 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:21:50.034127 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: BEGIN
+[0m21:21:50.034351 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m21:21:50.034874 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m21:21:50.035174 [debug] [Thread-3 (]: Using duckdb connection "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"
+[0m21:21:50.035406 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: /* {"app": "dbt", "dbt_version": "1.12.4", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    data_dictionary_sk as unique_field,
+    count(*) as n_records
+
+from "analytics"."main"."stg_moma__data_dictionary"
+where data_dictionary_sk is not null
+group by data_dictionary_sk
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m21:21:50.035888 [debug] [Thread-4 (]: SQL status: OK in 0.524 seconds
+[0m21:21:50.038680 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: ROLLBACK
+[0m21:21:50.039497 [debug] [Thread-4 (]: On test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95: Close
+[0m21:21:50.040060 [info ] [Thread-4 (]: 4 of 12 PASS not_null_stg_moma__artworks_object_id ............................. [[32mPASS[0m in 0.59s]
+[0m21:21:50.040455 [debug] [Thread-4 (]: Finished running node test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95
+[0m21:21:50.042600 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m21:21:50.043943 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: ROLLBACK
+[0m21:21:50.044867 [debug] [Thread-3 (]: On test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288: Close
+[0m21:21:50.045702 [info ] [Thread-3 (]: 12 of 12 PASS unique_stg_moma__data_dictionary_data_dictionary_sk .............. [[32mPASS[0m in 0.02s]
+[0m21:21:50.046483 [debug] [Thread-3 (]: Finished running node test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288
+[0m21:21:50.212926 [debug] [Thread-2 (]: SQL status: OK in 0.429 seconds
+[0m21:21:50.214570 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: ROLLBACK
+[0m21:21:50.215040 [debug] [Thread-2 (]: On test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4: Close
+[0m21:21:50.215471 [info ] [Thread-2 (]: 10 of 12 PASS unique_stg_moma__artworks_artwork_sk ............................. [[32mPASS[0m in 0.45s]
+[0m21:21:50.215832 [debug] [Thread-2 (]: Finished running node test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4
+[0m21:21:50.266585 [debug] [Thread-1 (]: SQL status: OK in 0.460 seconds
+[0m21:21:50.268743 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: ROLLBACK
+[0m21:21:50.269287 [debug] [Thread-1 (]: On test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8: Close
+[0m21:21:50.269760 [info ] [Thread-1 (]: 11 of 12 PASS unique_stg_moma__artworks_object_id .............................. [[32mPASS[0m in 0.48s]
+[0m21:21:50.270153 [debug] [Thread-1 (]: Finished running node test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8
+[0m21:21:50.271260 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:50.271488 [debug] [MainThread]: On master: BEGIN
+[0m21:21:50.271663 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:21:50.272045 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:21:50.272238 [debug] [MainThread]: On master: COMMIT
+[0m21:21:50.272418 [debug] [MainThread]: Using duckdb connection "master"
+[0m21:21:50.272576 [debug] [MainThread]: On master: COMMIT
+[0m21:21:50.272932 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m21:21:50.273169 [debug] [MainThread]: On master: Close
+[0m21:21:50.273486 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:21:50.273659 [debug] [MainThread]: Connection 'list_analytics_main' was properly closed.
+[0m21:21:50.273818 [debug] [MainThread]: Connection 'test.analytics_project.unique_stg_moma__artworks_object_id.d9320483c8' was properly closed.
+[0m21:21:50.273990 [debug] [MainThread]: Connection 'test.analytics_project.unique_stg_moma__artworks_artwork_sk.affdf888e4' was properly closed.
+[0m21:21:50.274271 [debug] [MainThread]: Connection 'test.analytics_project.not_null_stg_moma__artworks_object_id.54eb1aab95' was properly closed.
+[0m21:21:50.274489 [debug] [MainThread]: Connection 'test.analytics_project.unique_stg_moma__data_dictionary_data_dictionary_sk.68c5c72288' was properly closed.
+[0m21:21:50.274749 [info ] [MainThread]: 
+[0m21:21:50.275065 [info ] [MainThread]: Finished running 12 data tests in 0 hours 0 minutes and 1.00 seconds (1.00s).
+[0m21:21:50.276472 [debug] [MainThread]: Command end result
+[0m21:21:50.298757 [debug] [MainThread]: Wrote artifact WritableManifest to C:\MOMA\target\manifest.json
+[0m21:21:50.302462 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\MOMA\target\semantic_manifest.json
+[0m21:21:50.305825 [debug] [MainThread]: Wrote artifact OsiDocument to C:\MOMA\target\osi_document.json
+[0m21:21:50.313165 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\MOMA\target\run_results.json
+[0m21:21:50.313581 [info ] [MainThread]: 
+[0m21:21:50.313881 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:21:50.314070 [info ] [MainThread]: 
+[0m21:21:50.314262 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=12
+[0m21:21:50.315478 [debug] [MainThread]: Command `dbt test` succeeded at 21:21:50.315391 after 1.99 seconds
+[0m21:21:50.315756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4A767E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4B8419C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C4B841B20>]}
+[0m21:21:50.315990 [debug] [MainThread]: Flushing usage events
+[0m21:21:50.905700 [debug] [MainThread]: An error was encountered while trying to flush usage events
